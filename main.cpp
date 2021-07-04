@@ -53,6 +53,8 @@ int main()
 
         cout<<a[0];
 
+        result[i] = a[0];
+
         cout<<endl<<endl;
     }
 
