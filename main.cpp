@@ -41,12 +41,29 @@ int main()
             cout<<a[j]<<"\t";
         }
 
-        for(int j = 0; j < number_of_variables; j++)
+        for(int j = 0; j <= e.length; j++)
         {
+
+            switch(modified[j])
+            {
+            case '!':
+                a[j] = !a[j];
+            }
+
+        }
+
+        for(int j = 0; j <= e.length; j++)
+        {
+
             switch(modified[j])
             {
             case '&':
-                a[j-1] = a[j-1]&&a[j];
+                a[0] = a[0]&&a[1];
+                break;
+
+            case '|':
+                a[0] = a[0]||a[1];
+                break;
 
             }
         }
