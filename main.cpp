@@ -1,8 +1,9 @@
 //Written by Saugat Baral
 #include<iostream>
 #include<cmath>
-#include<string.h>
+
 using namespace std;
+
 #include "expression.h"
 
 
@@ -11,8 +12,6 @@ int main()
     expression e;
     e.get();
     e.analyze();
-
-    string modified = e.expression;
 
     int number_of_variables = e.n;
 
@@ -25,14 +24,14 @@ int main()
     for(int i = 0; i < total; i++)
     {
         int n = i;
-        int a[number_of_variables] = {0};
-        int temp = 0;
+        int a[e.length] = {0};
+        int temp[e.length] = {0};
 
         for(int j = number_of_variables - 1; n > 0; j--)
         {
-            temp = a[j];
+            temp[0] = a[j];
             a[j] = n%2;
-            a[j-1] = temp;
+            a[j-1] = temp[0];
             n = n/2;
         }
 
@@ -41,34 +40,134 @@ int main()
             cout<<a[j]<<"\t";
         }
 
-        for(int j = 0; j <= e.length; j++)
+
+
+        for(int j = 0; j < e.length; j++)
         {
 
-            switch(modified[j])
+            switch(e.expression[j])
             {
             case '!':
-                a[j] = !a[j];
-            }
+                for(int k = 0; k < e.length-j; k++)
+                {
+                temp[k] = a[j+k];
+                }
 
-        }
+                a[j] = 2;
 
-        for(int j = 0; j <= e.length; j++)
-        {
+                for(int k = 0; k < e.length-j; k++)
+                {
+                a[j+1+k] = temp[k];
+                }
+                break;
 
-            switch(modified[j])
-            {
             case '&':
-                a[0] = a[0]&&a[1];
+
+                for(int k = 0; k < e.length-j; k++)
+                {
+                temp[k] = a[j+k];
+                }
+
+                a[j] = 3;
+
+                for(int k = 0; k < e.length-j; k++)
+                {
+                a[j+1+k] = temp[k];
+                }
                 break;
 
             case '|':
-                a[0] = a[0]||a[1];
+
+                for(int k = 0; k < e.length-j; k++)
+                {
+                temp[k] = a[j+k];
+                }
+
+                a[j] = 4;
+
+                for(int k = 0; k < e.length-j; k++)
+                {
+                a[j+1+k] = temp[k];
+                }
+                break;
+
+            case '(':
+
+                for(int k = 0; k < e.length-j; k++)
+                {
+                temp[k] = a[j+k];
+                }
+
+                a[j] = 5;
+
+                for(int k = 0; k < e.length-j; k++)
+                {
+                a[j+1+k] = temp[k];
+                }
+                break;
+
+            case ')':
+
+                for(int k = 0; k < e.length-j; k++)
+                {
+                temp[k] = a[j+k];
+                }
+
+                a[j] = 5;
+
+                for(int k = 0; k < e.length-j; k++)
+                {
+                a[j+1+k] = temp[k];
+                }
                 break;
 
             }
         }
 
+
+
+        for(int j = 0; j < e.length; j++)
+        {
+            switch(a[j])
+            {
+                case(2):
+                    a[j] = !a[j+1];
+
+                    for(int k = j; k < e.length-j; k++)
+                        {
+                            a[k+1] = a[k+2];
+                        }
+
+                        break;
+
+                case(3):
+                    a[j-1] = a[j-1]&&a[j+1];
+
+                    for(int k = j; k < e.length-j; k++)
+                        {
+                            a[k] = a[k+2];
+                        }
+                        j-=1;
+
+                        break;
+
+                case(4):
+                    a[j-1] = a[j-1]||a[j+1];
+
+                    for(int k = j; k < e.length-j; k++)
+                        {
+                            a[k] = a[k+2];
+                        }
+                        j-=1;
+
+                        break;
+
+            }
+
+        }
+
         cout<<a[0];
+
 
         result[i] = a[0];
 
