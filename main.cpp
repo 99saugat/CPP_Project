@@ -41,7 +41,7 @@ int main()
         }
 
 
-
+//Converting strings to numbers
         for(int j = 0; j < e.length; j++)
         {
 
@@ -125,6 +125,7 @@ int main()
         }
 
 
+//String Manipulation from numbers
 
         for(int j = 0; j < e.length; j++)
         {
@@ -166,7 +167,7 @@ int main()
 
         }
 
-        cout<<a[0];
+       cout<<a[0];
 
 
         result[i] = a[0];
