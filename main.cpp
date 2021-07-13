@@ -127,19 +127,133 @@ int main()
 
 //String Manipulation from numbers
 
-        for(int j = 0; j < e.length; j++)
+//Brackets
+
+int next_bracket = 0;
+
+for(int i = 0; i < e.length; i++)
         {
-            switch(a[j])
+            if(a[i] == 5 )
             {
-                case(2):
-                    a[j] = !a[j+1];
+
+                for(int j = i+1; j < e.length; j++)
+        {
+            if(a[j] == 5)
+            {
+            next_bracket = j;
+            break;
+
+            }
+
+
+
+//other operators
+
+        for(int j = i+1; j < next_bracket; j++)
+        {
+
+            if(a[j] == 2 )
+            {
+
+                a[j] = !a[j+1];
 
                     for(int k = j; k < e.length-j; k++)
                         {
                             a[k+1] = a[k+2];
                         }
 
+
+            }
+
+
+
+        }
+
+
+        for(int j = i+1; j < next_bracket; j++)
+        {
+
+            switch(a[j])
+            {
+
+                case(3):
+                    a[j-1] = a[j-1]&&a[j+1];
+
+                    for(int k = j; k < e.length-j; k++)
+                        {
+                            a[k] = a[k+2];
+                        }
+                        j-=1;
+
                         break;
+
+                case(4):
+                    a[j-1] = a[j-1]||a[j+1];
+
+                    for(int k = j; k < e.length-j; k++)
+                        {
+                            a[k] = a[k+2];
+                        }
+                        j-=1;
+
+                        break;
+
+            }
+
+
+        }
+
+            }
+
+        }
+
+
+//removing brackets
+
+
+        for(int j = 0; j < e.length; j++)
+        {
+            if(a[j] == 5)
+            {
+
+                    for(int k = j; k < e.length; k++)
+                        {
+                            a[k] = a[k+1];
+                        }
+
+
+            }
+
+        }
+
+
+        }
+
+//other operators
+
+
+for(int j = 0; j < e.length; j++)
+        {
+            if(a[j] == 2 )
+            {
+
+                a[j] = !a[j+1];
+
+                    for(int k = j; k < e.length-j; k++)
+                        {
+                            a[k+1] = a[k+2];
+                        }
+
+
+            }
+
+        }
+
+
+        for(int j = 0; j < e.length; j++)
+        {
+            switch(a[j])
+            {
 
                 case(3):
                     a[j-1] = a[j-1]&&a[j+1];
@@ -167,6 +281,7 @@ int main()
 
         }
 
+
        cout<<a[0];
 
 
@@ -176,5 +291,6 @@ int main()
     }
 
     return 0;
+
 
 }
