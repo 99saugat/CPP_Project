@@ -281,9 +281,10 @@ for(int j = 0; j < e.length; j++)
 
         }
 
-
-       cout<<a[0];
-
+for(int i = 0; i<e.length; i++)
+{
+       cout<<a[i];
+}
 
         result[i] = a[0];
 
