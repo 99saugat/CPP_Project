@@ -137,13 +137,14 @@ for(int i = 0; i < e.length; i++)
             {
 
                 for(int j = i+1; j < e.length; j++)
-        {
-            if(a[j] == 5)
-            {
-            next_bracket = j;
-            break;
+                {
 
-            }
+                    if(a[j] == 5)
+                    {
+                        next_bracket = j;
+                        break;
+
+                    }
 
 
 
@@ -231,7 +232,6 @@ for(int i = 0; i < e.length; i++)
 
 //other operators
 
-
 for(int j = 0; j < e.length; j++)
         {
             if(a[j] == 2 )
@@ -239,7 +239,7 @@ for(int j = 0; j < e.length; j++)
 
                 a[j] = !a[j+1];
 
-                    for(int k = j; k < e.length-j; k++)
+                    for(int k = j; k < e.length-j-2; k++)
                         {
                             a[k+1] = a[k+2];
                         }
@@ -281,10 +281,7 @@ for(int j = 0; j < e.length; j++)
 
         }
 
-for(int i = 0; i<e.length; i++)
-{
-       cout<<a[i];
-}
+cout<<a[0];
 
         result[i] = a[0];
 
