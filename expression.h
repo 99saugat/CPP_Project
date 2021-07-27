@@ -29,7 +29,7 @@ void expression::analyze()
         }
 
     }
-/*
+
     n2 = n;
 
     char variable[n];
@@ -60,11 +60,11 @@ void expression::analyze()
    }
 
    n = a;
-*/
-for(int i=0;i<n;i++)
+
+for(int i=0;i<a;i++)
 {
-   cout<<var[i]<<"\t";
-   single_variable[i] = var[i];
+   cout<<variable[i]<<"\t";
+   single_variable[i] = variable[i];
 }
 
     cout<<expression<<endl;
