@@ -1,6 +1,7 @@
 //Written by Saugat Baral
 #include<iostream>
 #include<cmath>
+#include<string>
 
 using namespace std;
 
@@ -39,7 +40,6 @@ int main()
         {
             cout<<a[j]<<"\t";
         }
-
 
 //Converting strings to numbers
         for(int j = 0; j < e.length; j++)
@@ -124,6 +124,25 @@ int main()
             }
         }
 
+/*
+//Adding values of repeated variables
+for(int j=0; j<e.length; j++)
+{
+for(int k = 0; k<e.n;k++)
+{
+    if(e.expression[j] == e.single_variable[k])
+    {
+        a[j] = a[0];
+    }
+}
+}
+*/
+/*
+ for(int i=0;i<e.length;i++)
+        {
+            cout<<a[i];
+        }
+*/
 
 //String Manipulation from numbers
 
@@ -207,6 +226,8 @@ for(int i = 0; i < e.length; i++)
             }
 
         }
+
+
 
 
 //removing brackets
