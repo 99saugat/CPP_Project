@@ -22,10 +22,14 @@ int main()
 
     int result[total];
 
+    int b[e.n] = {0};
+
     for(int i = 0; i < total; i++)
     {
         int n = i;
+
         int a[e.length] = {0};
+
         int temp[e.length] = {0};
 
         for(int j = number_of_variables - 1; n > 0; j--)
@@ -41,18 +45,11 @@ int main()
             cout<<a[j]<<"\t";
         }
 
+        for(int j = 0; j < e.n; j++)
+        {
+            b[j] = a[j];
+        }
 
-        //Adding values of repeated variables
-for(int j=0; j<e.n; j++)
-{
-for(int k = 0; k<e.length;k++)
-{
-    if(e.expression[k] == e.single_variable[j])
-    {
-        a[k] = a[j];
-    }
-}
-}
 
 //Converting strings to numbers
         for(int j = 0; j < e.length; j++)
@@ -63,14 +60,14 @@ for(int k = 0; k<e.length;k++)
             case '!':
                 for(int k = 0; k < e.length-j; k++)
                 {
-                temp[k] = a[j+k+1];
+                temp[k] = a[j+k];
                 }
 
                 a[j] = 2;
 
                 for(int k = 0; k < e.length-j; k++)
                 {
-                a[j+1+k] = temp[k];
+                a[j+k+1] = temp[k];
                 }
                 break;
 
@@ -78,7 +75,7 @@ for(int k = 0; k<e.length;k++)
 
                 for(int k = 0; k < e.length-j; k++)
                 {
-                temp[k] = a[j+k+1];
+                temp[k] = a[j+k];
                 }
 
                 a[j] = 3;
@@ -93,7 +90,7 @@ for(int k = 0; k<e.length;k++)
 
                 for(int k = 0; k < e.length-j; k++)
                 {
-                temp[k] = a[j+k+1];
+                temp[k] = a[j+k];
                 }
 
                 a[j] = 4;
@@ -108,7 +105,7 @@ for(int k = 0; k<e.length;k++)
 
                 for(int k = 0; k < e.length-j; k++)
                 {
-                temp[k] = a[j+k+1];
+                temp[k] = a[j+k];
                 }
 
                 a[j] = 5;
@@ -123,7 +120,7 @@ for(int k = 0; k<e.length;k++)
 
                 for(int k = 0; k < e.length-j; k++)
                 {
-                temp[k] = a[j+k+1];
+                temp[k] = a[j+k];
                 }
 
                 a[j] = 5;
@@ -138,14 +135,29 @@ for(int k = 0; k<e.length;k++)
         }
 
 
-/*
+//Adding values of repeated variables
+for(int j=0; j<e.n; j++)
+{
+for(int k = 0; k<e.length;k++)
+{
+    if(e.expression[k] == e.single_variable[j])
+    {
+        a[k] = b[j];
 
+    }
+}
+}
+
+/*
+//(A&B)|(A&!C)|(B&!C)
  for(int i=0;i<e.length;i++)
         {
             cout<<a[i];
         }
 
 */
+
+
 //String Manipulation from numbers
 
 //Brackets
@@ -166,20 +178,18 @@ for(int i = 0; i < e.length; i++)
                         break;
 
                     }
-
-
+                }
 
 //other operators
 
         for(int j = i+1; j < next_bracket; j++)
         {
-
             if(a[j] == 2 )
             {
 
                 a[j] = !a[j+1];
 
-                    for(int k = j; k < e.length-j; k++)
+                    for(int k = j; k < e.length-j-2; k++)
                         {
                             a[k+1] = a[k+2];
                         }
@@ -187,14 +197,11 @@ for(int i = 0; i < e.length; i++)
 
             }
 
-
-
         }
 
 
         for(int j = i+1; j < next_bracket; j++)
         {
-
             switch(a[j])
             {
 
@@ -222,14 +229,10 @@ for(int i = 0; i < e.length; i++)
 
             }
 
-
         }
 
-            }
-
+    }
         }
-
-
 
 
 //removing brackets
@@ -251,9 +254,9 @@ for(int i = 0; i < e.length; i++)
         }
 
 
-        }
 
 //other operators
+
 
 for(int j = 0; j < e.length; j++)
         {
@@ -304,7 +307,9 @@ for(int j = 0; j < e.length; j++)
 
         }
 
-cout<<a[0];
+
+
+        cout<<a[0];
 
         result[i] = a[0];
 
