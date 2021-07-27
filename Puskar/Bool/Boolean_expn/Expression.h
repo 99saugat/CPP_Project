@@ -4,11 +4,11 @@
 
 #include<iostream>
 using namespace std;
- extern int result[4];
+extern  int result[4], X[4][4];
 namespace puskar
 {
 
-    static string S;
+    static string S,P;
 }
 class Expression
 {
