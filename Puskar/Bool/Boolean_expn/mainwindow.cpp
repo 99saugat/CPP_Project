@@ -92,19 +92,29 @@ void MainWindow::on_pushButton_clicked()
         QList<QString> C;
 
         // Create some data that is tabular in nature:
-       A.append("0");
+     A.append("0");
+     B.append("0");
+     /* A.append("0");
         A.append("0");
         A.append("1");
         A.append("1");
         B.append("0");
         B.append("1");
        B.append("0");
-       B.append("1");
+       B.append("1");*/
        using namespace puskar;
        expn();
-       for (int i=0;i<4;i++)
+       for (int i=1;i<4;i++)
+      { for (int j=0;j<1;j++)
        {
-           using namespace puskar;
+           QString t = QString::number(X[i][j]);
+           QString u = QString::number(X[i][j+1]);
+          A.append(t);
+           B.append(u);
+       }
+           }
+       for (int i=0;i<4;i++)
+       {        
            QString s = QString::number(result[i]);
           C.append(s);
        }
