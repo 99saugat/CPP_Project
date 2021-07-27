@@ -42,18 +42,6 @@ int main()
         }
 
 
-        //Adding values of repeated variables
-for(int j=0; j<e.n; j++)
-{
-for(int k = 0; k<e.length;k++)
-{
-    if(e.expression[k] == e.single_variable[j])
-    {
-        a[k] = a[j];
-    }
-}
-}
-
 //Converting strings to numbers
         for(int j = 0; j < e.length; j++)
         {
@@ -63,14 +51,14 @@ for(int k = 0; k<e.length;k++)
             case '!':
                 for(int k = 0; k < e.length-j; k++)
                 {
-                temp[k] = a[j+k+1];
+                temp[k] = a[j+k];
                 }
 
                 a[j] = 2;
 
                 for(int k = 0; k < e.length-j; k++)
                 {
-                a[j+1+k] = temp[k];
+                a[j+k+1] = temp[k];
                 }
                 break;
 
@@ -78,7 +66,7 @@ for(int k = 0; k<e.length;k++)
 
                 for(int k = 0; k < e.length-j; k++)
                 {
-                temp[k] = a[j+k+1];
+                temp[k] = a[j+k];
                 }
 
                 a[j] = 3;
@@ -93,7 +81,7 @@ for(int k = 0; k<e.length;k++)
 
                 for(int k = 0; k < e.length-j; k++)
                 {
-                temp[k] = a[j+k+1];
+                temp[k] = a[j+k];
                 }
 
                 a[j] = 4;
@@ -108,7 +96,7 @@ for(int k = 0; k<e.length;k++)
 
                 for(int k = 0; k < e.length-j; k++)
                 {
-                temp[k] = a[j+k+1];
+                temp[k] = a[j+k];
                 }
 
                 a[j] = 5;
@@ -123,7 +111,7 @@ for(int k = 0; k<e.length;k++)
 
                 for(int k = 0; k < e.length-j; k++)
                 {
-                temp[k] = a[j+k+1];
+                temp[k] = a[j+k];
                 }
 
                 a[j] = 5;
@@ -137,9 +125,20 @@ for(int k = 0; k<e.length;k++)
             }
         }
 
-
 /*
-
+//Adding values of repeated variables
+for(int j=0; j<e.n; j++)
+{
+for(int k = 0; k<e.length;k++)
+{
+    if(e.expression[k] == e.single_variable[j])
+    {
+        a[k] = a[j];
+    }
+}
+}
+*/
+/*
  for(int i=0;i<e.length;i++)
         {
             cout<<a[i];
