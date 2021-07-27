@@ -1,3 +1,5 @@
+/* Written by Puskar Neupane */
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include"Expression.h"
