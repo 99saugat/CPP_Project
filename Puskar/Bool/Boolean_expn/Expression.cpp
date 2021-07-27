@@ -4,7 +4,7 @@
 #include<cmath>
 #include<string.h>
 using namespace std;
-int result[4];
+int result[4], X[4][4];
 
 int expn()
 {
@@ -40,6 +40,7 @@ int expn()
         for(int j = 0; j < number_of_variables; j++)
         {
             cout<<a[j]<<"\t";
+            X[i][j]=a[j];
         }
 
 //Converting strings to numbers
