@@ -148,10 +148,12 @@ for(int k = 0; k<e.length;k++)
 }
 }
 
+
 /*
 //(A&B)|(A&!C)|(B&!C)
 //(C&!D)|(!A&C)|(A&B&!D)|(!A&!B&D)
-//(!a&b)|(c)
+//(!a&b)|c
+//(!A&!B)|(!B&C)|(A&B)
  for(int i=0;i<e.length;i++)
         {
             cout<<a[i];
@@ -191,13 +193,24 @@ for(int i = 0; i < e.length; i++)
 
                 a[j] = !a[j+1];
 
-                    for(int k = j; k < e.length-j-2; k++)
+                    for(int k = j; k < e.length-j+2; k++)
                         {
                             a[k+1] = a[k+2];
                         }
 
 
             }
+
+                for(int j = i+1; j < e.length; j++)
+                {
+
+                    if(a[j] == 5)
+                    {
+                        next_bracket = j;
+                        break;
+
+                    }
+                }
 
         }
 
@@ -211,7 +224,6 @@ for(int i = 0; i < e.length; i++)
 
                 }
             }
-
 
 
 for(int j = i+1; j < next_bracket; j++)
@@ -257,6 +269,7 @@ for(int j = i+1; j < next_bracket; j++)
 
             }
 
+
             //removing brackets
 
             for(int j = i+1; j < e.length; j++)
@@ -290,12 +303,7 @@ for(int j = i+1; j < next_bracket; j++)
     }
 
 
-
-
-
-
-//other operators
-
+//after brackets are solved
 
 for(int j = 0; j < e.length; j++)
         {
@@ -304,7 +312,7 @@ for(int j = 0; j < e.length; j++)
 
                 a[j] = !a[j+1];
 
-                    for(int k = j; k < e.length-j-2; k++)
+                    for(int k = j; k < e.length-j+2; k++)
                         {
                             a[k+1] = a[k+2];
                         }
