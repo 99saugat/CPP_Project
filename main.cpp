@@ -150,6 +150,8 @@ for(int k = 0; k<e.length;k++)
 
 /*
 //(A&B)|(A&!C)|(B&!C)
+//(C&!D)|(!A&C)|(A&B&!D)|(!A&!B&D)
+//(!a&b)|(c)
  for(int i=0;i<e.length;i++)
         {
             cout<<a[i];
@@ -199,9 +201,34 @@ for(int i = 0; i < e.length; i++)
 
         }
 
+            for(int j = i+1; j < e.length; j++)
+            {
 
-        for(int j = i+1; j < next_bracket; j++)
-        {
+                if(a[j] == 5)
+                {
+                    next_bracket = j;
+                    break;
+
+                }
+            }
+
+
+
+for(int j = i+1; j < next_bracket; j++)
+{
+
+            for(int k = i+1; k < e.length; k++)
+            {
+
+                if(a[k] == 5)
+                {
+                    next_bracket = k;
+                    break;
+
+                }
+            }
+
+
             switch(a[j])
             {
 
@@ -226,19 +253,24 @@ for(int i = 0; i < e.length; i++)
                         j-=1;
 
                         break;
+            }
 
             }
 
-        }
+            //removing brackets
 
-    }
-        }
+            for(int j = i+1; j < e.length; j++)
+            {
 
+                if(a[j] == 5)
+                {
+                    next_bracket = j;
+                    break;
 
-//removing brackets
+                }
+            }
 
-
-        for(int j = 0; j < e.length; j++)
+        for(int j = 0; j < next_bracket; j++)
         {
             if(a[j] == 5)
             {
@@ -252,6 +284,13 @@ for(int i = 0; i < e.length; i++)
             }
 
         }
+
+    }
+
+    }
+
+
+
 
 
 
