@@ -2,8 +2,8 @@ class expression
 {
     public:
     string expression, var, single_variable;
-    int length;
-    int n = 0, n2 = 0; //n is number_of_variables
+    int length; //length of expression
+    int n = 0; //number of variables
     void get();
     void analyze();
 };
@@ -19,6 +19,7 @@ void expression::analyze()
 
     length = expression.length();
 
+//finding total variables by excluding operators
 
     for (int i = 0; i < length; i++)
     {
@@ -30,7 +31,7 @@ void expression::analyze()
 
     }
 
-    n2 = n;
+//finding total variables, where a variable is present only one time
 
     char variable[n];
 
@@ -61,6 +62,7 @@ void expression::analyze()
 
    n = a;
 
+//copying variable to single_variable
 for(int i=0;i<a;i++)
 {
    cout<<variable[i]<<"\t";
