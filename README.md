@@ -7,19 +7,33 @@ The truth table program was written by Saugat Baral(076BEL041), the graphics des
 If you find any problems, please mail me at 99saugat@gmail.com
 
 Expressions that have been tested to work:
+
 A&B
+
 A|B
+
 !A&B
+
 A&!B
+
 !A&!B
+
 !A|!B
+
 A&B&C
+
 !A&B|C
+
 !A&B&!C
 
 Some homework problems that work in this program and which we did in DL classes:
+
 (A&B)|(A&!C)|(B&!C)
+
 (C&!D)|(!A&C)|(A&B&!D)|(!A&!B&D)
+
 (!A&B)|C
+
 (!A&!B)|(!B&C)|(A&B)
+
 
