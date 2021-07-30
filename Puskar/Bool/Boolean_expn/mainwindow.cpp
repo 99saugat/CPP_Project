@@ -112,71 +112,114 @@ void MainWindow::on_pushButton_clicked()
         // Create some data that is tabular in nature:
        using namespace puskar;
        expn();
-       if (n==2)
-         {
 
-         for (int z=0;z<4;z++)
-         { for (int j=0;j<1;j++)
-         {
-           QString t = QString::number(X[z][j]);
-           QString u = QString::number(X[z][j+1]);
-          //  QString v = QString::number(X[z][j+2]);
-          //   QString w = QString::number(X[z][j+3]);
-          A.append(t);
-           B.append(u);
-            C.append("*");
-             D.append("*");
-          }
-           }
+
+
+       if (n==2)
+
+      {
+        A.append("0");
+         A.append("0");
+          A.append("1");
+           A.append("1");
+           for (int k=0;k<12;k++)
+           {
+
+           A.append("*");
+            }
+
+           B.append("0");
+            B.append("1");
+             B.append("0");
+              B.append("1");
+              for (int k=0;k<12;k++)
+              {
+              B.append("*");
+               }
+              for (int k=0;k<16;k++)
+              {
+              C.append("*");
+               D.append("*");
+               }
+
           for (int i=0;i<4;i++)
           {
            QString s = QString::number(result[i]);
           E.append(s);
            }
+          for(int k=0;k<12;k++)
+          {
+                  E.append("*");
+          }
 
 
-           // Create model:
-           TestModel *truthtable = new TestModel(this);
+           }
 
-           // Populate model with data:
-           truthtable->populateData(A,B,C,D,E);
-       }
 
 
 
           else if (n==3)
             {
-                for (int z=0;z<8;z++)
-             { for (int j=0;j<1;j++)
+           A.append("0");
+            A.append("0");
+             A.append("0");
+              A.append("0");
+              A.append("1");
+               A.append("1");
+                A.append("1");
+                 A.append("1");
+              for (int k=0;k<8;k++)
               {
-               QString t = QString::number(X[z][j]);
-               QString u = QString::number(X[z][j+1]);
-                QString v = QString::number(X[z][j+2]);
-                 //QString w = QString::number(X[z][j+3]);
-              A.append(t);
-               B.append(u);
-                C.append(v);
-                 D.append("*");
+
+              A.append("*");
                }
-               }
+
+              B.append("0");
+               B.append("0");
+                B.append("1");
+                 B.append("1");
+                 B.append("0");
+                  B.append("0");
+                   B.append("1");
+                    B.append("1");
+                 for (int k=0;k<8;k++)
+                 {
+                 B.append("*");
+                  }
+                 C.append("0");
+                 C.append("0");
+                   C.append("0");
+                    C.append("0");
+                    C.append("1");
+                     C.append("1");
+                     C.append("1");
+                      C.append("1");
+                    for (int k=0;k<8;k++)
+                    {
+                    C.append("*");
+                 for (int k=0;k<16;k++)
+                 {
+
+                  D.append("*");
+                  }
               for (int i=0;i<8;i++)
               {
                QString s = QString::number(result[i]);
               E.append(s);
               }
 
+              for(int k=0;k<8;k++)
+              {
+                      E.append("*");
+              }
 
-               // Create model:
-               TestModel *truthtable = new TestModel(this);
-
-                // Populate model with data:
-               truthtable->populateData(A,B,C,D,E);
                 }
+       }
 
 
 
 
-               else if (n==4)
+          else if (n==4)
                {
                 for (int z=0;z<16;z++)
                { for (int j=0;j<1;j++)
@@ -198,20 +241,24 @@ void MainWindow::on_pushButton_clicked()
            }
 
 
-            // Create model:
-           TestModel *truthtable = new TestModel(this);
-
-            // Populate model with data:
-            truthtable->populateData(A,B,C,D,E);
 
 
-            // Connect model to table view:
-           ui->tableView->setModel(truthtable);
+
           }
 
-           // Make table header visible and display table:
-      ui->tableView->horizontalHeader()->setVisible(true);
-      ui->tableView->show();
+
+          // Create model:
+          TestModel *truthtable = new TestModel(this);
+
+          // Populate model with data:
+          truthtable->populateData(A,B,C,D,E);
+
+          // Connect model to table view:
+         ui->tableView->setModel(truthtable);
+
+          // Make table header visible and display table:
+     ui->tableView->horizontalHeader()->setVisible(true);
+     ui->tableView->show();
 }
 
 
