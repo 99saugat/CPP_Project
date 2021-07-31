@@ -124,7 +124,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>E.g. : (A)&amp;(B) , (!A)&amp;(B)</string>
+     <string>E.g. (A&amp;B) (A&amp;B&amp;C&amp;!D)</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
