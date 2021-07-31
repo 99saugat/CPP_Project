@@ -113,7 +113,7 @@ void MainWindow::on_pushButton_clicked()
        using namespace puskar;
        expn();
 
-
+   // for two variables
 
        if (n==2)
 
@@ -156,52 +156,62 @@ void MainWindow::on_pushButton_clicked()
            }
 
 
-
+   // for 3 variables
 
           else if (n==3)
             {
-           A.append("0");
-            A.append("0");
-             A.append("0");
-              A.append("0");
-              A.append("1");
-               A.append("1");
+           for (int k=0;k<4;k++)
+            {
+                A.append("0");
+            }
+           for (int k=0;k<4;k++)
+            {
                 A.append("1");
-                 A.append("1");
-              for (int k=0;k<8;k++)
+            }
+
+            for (int k=0;k<8;k++)
               {
 
               A.append("*");
                }
 
-              B.append("0");
-               B.append("0");
+
+            for (int k=0;k<2;k++)
+               {
+                for(int q=0;q<2;q++)
+                {
+                B.append("0");
+                 }
+                for(int q=0;q<2;q++)
+                {
                 B.append("1");
-                 B.append("1");
-                 B.append("0");
-                  B.append("0");
-                   B.append("1");
-                    B.append("1");
-                 for (int k=0;k<8;k++)
+                 }
+               }
+               for (int k=0;k<8;k++)
                  {
                  B.append("*");
                   }
-                 C.append("0");
-                 C.append("0");
-                   C.append("0");
-                    C.append("0");
-                    C.append("1");
+
+
+
+             for (int k=0;k<4;k++)
+                    {
+                     C.append("0");
                      C.append("1");
-                     C.append("1");
-                      C.append("1");
-                    for (int k=0;k<8;k++)
+                    }
+               for (int k=0;k<8;k++)
                     {
                     C.append("*");
-                 for (int k=0;k<16;k++)
+                    }
+
+
+             for (int k=0;k<16;k++)
                  {
 
                   D.append("*");
                   }
+
+
               for (int i=0;i<8;i++)
               {
                QString s = QString::number(result[i]);
@@ -213,38 +223,58 @@ void MainWindow::on_pushButton_clicked()
                       E.append("*");
               }
 
-                }
-       }
+             }
 
 
 
+         // for 4 variables
 
           else if (n==4)
+           {
+               for (int k=0;k<8;k++)
+                {
+                    A.append("0");
+                }
+               for (int k=0;k<8;k++)
+                {
+                    A.append("1");
+                }
+
+               for (int k=0;k<2;k++)
+                {
+                    for(int q=0;q<4;q++)
+                    {
+                    B.append("0");
+                     }
+                    for(int q=0;q<4;q++)
+                    {
+                    B.append("1");
+                     }
+
+                }
+                for (int k=0;k<4;k++)
+                {
+                    for(int q=0;q<2;q++)
+                    {
+                    C.append("0");
+                     }
+                    for(int q=0;q<2;q++)
+                    {
+                    C.append("1");
+                     }
+
+                }
+                for (int k=0;k<16;k++)
                {
-                for (int z=0;z<16;z++)
-               { for (int j=0;j<1;j++)
-             {
-              QString t = QString::number(X[z][j]);
-              QString u = QString::number(X[z][j+1]);
-              QString v = QString::number(X[z][j+2]);
-              QString w = QString::number(X[z][j+3]);
-          A.append(t);
-           B.append(u);
-            C.append(v);
-             D.append(w);
-             }
+                    D.append("0");
+                    D.append("1");
+                }
            }
             for (int i=0;i<16;i++)
            {
            QString s = QString::number(result[i]);
           E.append(s);
            }
-
-
-
-
-
-          }
 
 
           // Create model:
