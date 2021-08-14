@@ -19,7 +19,7 @@ A&B&C
 
 Some homework problems that work in this program and which we did in DL classes:
 (A&B)|(A&!C)|(B&!C)
-(C&!D)|(!A&C)|(A&B&!D)|(!A&!B&D)
+(A&!B)|(!C&D)|(A&B&!D)|(!A&!B&D)
 (!A&B)|C
 (!A&!B)|(!B&C)|(A&B)
 
@@ -37,6 +37,7 @@ for(int i=0;i<e.length;i++)
 #include<string>
 using namespace std;
 #include "expression.h"
+#include "kmap.h"
 
 //reads expression from the place, where operator is detected
 void read_expression(int a[], int temp[], int j, int length)
@@ -307,5 +308,50 @@ for(int j = 0; j < e.length; j++)
         result[i] = a[0];
         cout<<endl<<endl;
     }
+
+
+
+    //Printing KMAP when number of veriable = 4
+
+    if(number_of_variables == 4)
+    {
+
+    input k;
+    int position = 0;
+
+    k.var = number_of_variables;
+
+        for(int s=0; s<16; s++)
+    {
+        if(result[s] == 1)
+        {
+            position++;
+        }
+    }
+
+    k.terms = position;
+
+    position = 0;
+
+    for(int s=0; s<16; s++)
+    {
+        if(result[s] == 1)
+        {
+            k.a4[position] = s;
+            position++;
+
+        }
+    }
+
+
+    k.getdata();
+    k.exchange();
+
+    cout<<endl<<"*******PRINTING KMAP*******"<<endl<<endl;
+    k.display();
+    k.grouping();
+
+    }
+
     return 0;
 }
