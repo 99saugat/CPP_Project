@@ -12,6 +12,11 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QPixmap bkgnd("D:/Ideathon_2021/C++ project/Template-01.png");
+       bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+       QPalette palette;
+       palette.setBrush(QPalette::Window, bkgnd);
+       this->setPalette(palette);
 
 
 
