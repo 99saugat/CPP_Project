@@ -101,7 +101,6 @@ void MainWindow::on_Expression_editingFinished()
     input = ui->Expression->text();
     using namespace puskar;
     S=input.toStdString();
-   // expn();
      ui->label_3->setText(input);
 }
 
@@ -196,7 +195,6 @@ void MainWindow::on_pushButton_clicked()
                  {
                  B.append("*");
                   }
-
 
 
              for (int k=0;k<4;k++)
