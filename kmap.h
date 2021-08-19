@@ -177,23 +177,6 @@ void grouping()//This function is for the grouping of elements in K-Map
 
     }
   }
- /* for(int u=1;u<=4;u++)
-  {
-    for(int v=1;v<=4;v++)
-    {
-     if(u==4 && fil4[u][v]==1 && fil4[u][v]==fil4[1][v] && fil4[u][v]==fil4[1][v+1] && fil4[u][v]==fil4[u][v+1] && v!=4)
-      {
-         cout<<"["<<u<<"]"<<"["<<v<<"]"<<","<<"[1]"<<"["<<v<<"]"<<","<<"[1]"<<"["<<v+1<<"]"<<"and"<<"["<<u<<"]"<<"["<<v+1<<"]"<<" are grouped"<<endl;
-      }
-      else if(v==4 && fil4[u][v]==1 && fil4[u][v]==fil4[u+1][v] && fil4[u][v]==fil4[u][1] && fil4[u+1][1] && u!=4)
-      {
-        cout<<"["<<u<<"]"<<"["<<v<<"]"<<","<<"["<<u<<"]"<<"[1]"<<"["<<u+1<<"]"<<"[1]"<<"and"<<"["<<u+1<<"]"<<"["<<v<<"]"<<" are grouped"<<endl;
-      }
-      else if(fil4[u][v]==fil4[u][v+1] && fil4[u][v]==fil4[u+1][v] && fil4[u][v]==fil4[u+1][v+1] && fil4[u][v]==1)
-      {
-         cout<<"["<<u<<"]"<<"["<<v<<"]"<<" , "<<"["<<u+1<<"]"<<"["<<v<<"]"<<","<<"["<<u<<"]"<<"["<<v+1<<"]"<<"and"<<"["<<u+1<<"]"<<"["<<v+1<<"]"" are grouped"<<endl;
-      }
-    }
-  }*/
+ 
 }
 };
