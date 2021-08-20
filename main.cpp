@@ -67,6 +67,11 @@ void apply_not(int a[], int j, expression e)
                 {
                     a[k+1] = a[k+2];
                 }
+
+            for(int k=e.length-j+2;k<=e.length;k++)
+            {
+                a[k] = 0;
+            }
         }
 }
 
@@ -77,6 +82,11 @@ void modify_expression(int a[], int &j, int length)
         {
             a[k] = a[k+2];
         }
+
+    for(int k=length-j;k<=length;k++)
+    {
+        a[k] = 0;
+    }
         j-=1;
 }
 
