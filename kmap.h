@@ -130,7 +130,7 @@ void grouping()//This function is for the grouping of elements in K-Map
       }
       else if(j==4 && fil4[i][j]==1 && fil4[i][j]==fil4[i+1][j] && fil4[i][j]==fil4[i][1] && fil4[i+1][1] && i!=4)
       {
-        cout<<"["<<i<<"]"<<"["<<j<<"]"<<","<<"["<<i<<"]"<<"[1]"<<"["<<i+1<<"]"<<"[1]"<<"and"<<"["<<i+1<<"]"<<"["<<j<<"]"<<" are grouped"<<endl;
+        cout<<"["<<i<<"]"<<"["<<j<<"]"<<","<<"["<<i<<"]"<<"[1]"<<","<<"["<<i+1<<"]"<<"[1]"<<"and"<<"["<<i+1<<"]"<<"["<<j<<"]"<<" are grouped"<<endl;
       }
       else if(fil4[i][j]==fil4[i][j+1] && fil4[i][j]==fil4[i+1][j] && fil4[i][j]==fil4[i+1][j+1] && fil4[i][j]==1)
       {
@@ -177,6 +177,6 @@ void grouping()//This function is for the grouping of elements in K-Map
 
     }
   }
- 
+
 }
 };
