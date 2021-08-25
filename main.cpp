@@ -1,5 +1,4 @@
 /*
-Edit
 ***This program prints the truth table of a given expression.***
 
 Written by Saugat Baral(076BEL041) of the group PRSS for object oriented programming project.
